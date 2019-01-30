@@ -11,8 +11,10 @@ class ChartController extends Controller
         $apt = $request->apt;
         if($apt != null) {
             $charts = Charts::getCharts($apt);
+        } else {
+            $charts = null;
         }
-        
+
         return view('site.charts')->with('apt', $apt)->with('charts', $charts);
     }
 
