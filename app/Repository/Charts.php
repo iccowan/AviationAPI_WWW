@@ -24,4 +24,36 @@ class Charts
 
         return collect($value);
     }
+
+    public function getAFD($apt) {
+        $key = self::CACHE_KEY.'.AFD.'.$apt;
+
+        $value = Cache::remember($key, 1440, function() use ($apt) {
+            $client = new Client;
+            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/charts/afd?apt='.$apt, [
+                'auth' => ['aviationapi', 'aviationapi']
+            ]);
+            $result = json_decode($res->getBody());
+
+            return $result;
+        });
+
+        return collect($value);
+    }
+
+    public function getChartChanges($apt) {
+        $key = self::CACHE_KEY.'.CHANGE.'.$apt;
+
+        $value = Cache::remember($key, 1440, function() use ($apt) {
+            $client = new Client;
+            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/charts/changes?apt='.$apt, [
+                'auth' => ['aviationapi', 'aviationapi']
+            ]);
+            $result = json_decode($res->getBody());
+
+            return $result;
+        });
+
+        return collect($value);
+    }
 }

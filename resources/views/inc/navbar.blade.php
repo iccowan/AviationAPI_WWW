@@ -15,7 +15,7 @@
                     <div class="dropdown-menu" aria-labelledby="pilots">
                         <a class="dropdown-item" href="/charts">Search for Charts</a>
                         <a class="dropdown-item" href="/charts/afd">Search for AFD</a>
-                        <a class="dropdown-item" href="/charts/view-changes">Search for Change Comparisons</a>
+                        <a class="dropdown-item" href="/charts/changes">Search for Change Comparisons</a>
                     </div>
                 </li>
                 <li class="nav-item">
