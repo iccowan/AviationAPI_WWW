@@ -13,8 +13,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pilots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Charts</a>
                     <div class="dropdown-menu" aria-labelledby="pilots">
-                        <a class="dropdown-item" href="/charts">Search Charts</a>
-                        <a class="dropdown-item" href="/charts/view-changes">Search Change Comparisons</a>
+                        <a class="dropdown-item" href="/charts">Search for Charts</a>
+                        <a class="dropdown-item" href="/charts/afd">Search for AFD</a>
+                        <a class="dropdown-item" href="/charts/view-changes">Search for Change Comparisons</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -22,6 +23,19 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/preferred-routes">Airport Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/preferred-routes">Airport Weather</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pilots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VATSIM Data</a>
+                    <div class="dropdown-menu" aria-labelledby="pilots">
+                        <a class="dropdown-item" href="/charts">Search Pilots</a>
+                        <a class="dropdown-item" href="/charts/afd">Search Controllers</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
                 </li>
             </ul>
         </div>

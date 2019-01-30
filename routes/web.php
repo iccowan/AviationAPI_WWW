@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'FrontController@home');
+Route::get('/charts', 'ChartController@index');
+Route::post('/charts/search', 'ChartController@searchChart');
