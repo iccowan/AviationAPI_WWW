@@ -1,18 +1,21 @@
 @extends('layouts.master')
 
 @section('title')
-    Charts
+    Chart Changes
 @endsection
 
 @section('content')
     <div class="container">
         <br>
-        <h1>Search for Charts</h1>
+        <h1>Search for Chart Change Comparisons</h1>
         <form action="/charts/changes/search" method="post">
             @csrf
             <div class="row">
                 <div class="col-sm-4">
-                    <input type="text" name="apt" placeholder="Airport ID (KATL/ATL)" class="form-control">
+                    <input type="text" name="apt" placeholder="Airport ID (KATL/ATL) (Optional)" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" name="c_name" placeholder="Chart Name (Optional)" class="form-control">
                 </div>
                 <div class="col-sm-1">
                     <button class="btn btn-success" type="submit">Search</button>
@@ -20,7 +23,7 @@
             </div>
         </form>
         @if($apt != null)
-            @if($charts != null)
+            @if(count($charts) > 0)
                 <hr>
                 <h3>Chart Change Comparisons for {{ $apt }}</h3>
                 <br>

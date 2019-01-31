@@ -55,8 +55,9 @@ class ChartController extends Controller
 
     public function ChartChangeindex(Request $request) {
         $apt = $request->apt;
+        $c_name = $request->chart;
         if($apt != null) {
-            $charts = Charts::getChartChanges($apt);
+            $charts = Charts::getChartChanges($apt, $c_name);
         } else {
             $charts = null;
         }
@@ -70,7 +71,8 @@ class ChartController extends Controller
             if(strlen($apt) == 3) {
                 $apt = 'K'.strtoupper($apt);
             }
-            return redirect('/charts/changes?apt='.$apt);
+            $c_name = $request->c_name;
+            return redirect('/charts/changes?apt='.$apt.'&chart='.$c_name);
         } else {
             return redirect()->back()->with('error', 'You must search for an airport.');
         }

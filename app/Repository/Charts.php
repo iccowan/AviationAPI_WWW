@@ -41,12 +41,12 @@ class Charts
         return collect($value);
     }
 
-    public function getChartChanges($apt) {
+    public function getChartChanges($apt, $chart_name) {
         $key = self::CACHE_KEY.'.CHANGE.'.$apt;
 
         $value = Cache::remember($key, 1440, function() use ($apt) {
             $client = new Client;
-            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/charts/changes?apt='.$apt, [
+            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/charts/changes?apt='.$apt.'&chart_name='.$chart_name, [
                 'auth' => ['aviationapi', 'aviationapi']
             ]);
             $result = json_decode($res->getBody());
