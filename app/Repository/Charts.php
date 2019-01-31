@@ -42,7 +42,7 @@ class Charts
     }
 
     public function getChartChanges($apt, $chart_name) {
-        $key = self::CACHE_KEY.'.CHANGE.'.$apt;
+        $key = self::CACHE_KEY.'.CHANGE.'.$apt.$chart_name;
 
         $value = Cache::remember($key, 1440, function() use ($apt, $chart_name) {
             $client = new Client;
