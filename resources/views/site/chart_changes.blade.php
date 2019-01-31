@@ -50,7 +50,7 @@
                 </table>
             @else
                 <hr>
-                <h3>No chart changes found for {{ $apt }} from the last cycle</h3>
+                <h3>No chart changes found from the last cycle for those search parameters</h3>
             @endif
         @endif
     </div>
