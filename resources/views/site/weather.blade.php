@@ -30,7 +30,13 @@
                 <p><b>Report Time:</b> {{ \Carbon\Carbon::parse($metar[$apt]->time_of_obs)->format('m/d/Y h:m') }}z
                 <p><b>Flight Category:</b> {{ $metar[$apt]->category }}</p>
                 <p><b>Temperature/Dewpoint:</b> {{ $metar[$apt]->temp }}&deg;C / {{ $metar[$apt]->dewpoint }}&deg;C</p>
-                <p><b>Wind:</b> {{ $metar[$apt]->wind }} degrees @ {{ $metar[$apt]->wind_vel }} knots</p>
+                @if($metar[$apt]->wind_vel == 0)
+                    <p><b>Wind:</b> CALM</p>
+                @elseif($metar[$apt]->wind_vel < 3)
+                    <p><b>Wind:</b> VARIABLE @ {{ $metar[$apt]->wind_vel }} knots</p>
+                @else
+                    <p><b>Wind:</b> {{ $metar[$apt]->wind }} degrees @ {{ $metar[$apt]->wind_vel }} knots</p>
+                @endif
                 <p><b>Visibility:</b> {{ $metar[$apt]->visibility }} statue miles</p>
                 <p><b>Altimeter:</b> {{ $metar[$apt]->alt_hg }}</p>
                 <p><b>Sky Conditions:</b>
