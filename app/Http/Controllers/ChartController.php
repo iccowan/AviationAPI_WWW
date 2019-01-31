@@ -66,7 +66,7 @@ class ChartController extends Controller
     }
 
     public function searchChartChange(Request $request) {
-        if($request->apt != null && $request->c_name != null) {
+        if($request->apt != null || $request->c_name != null) {
             $apt = $request->apt;
             if($apt != null) {
                 if(strlen($apt) == 3) {
