@@ -32,7 +32,7 @@
                 <p><b>Temperature/Dewpoint:</b> {{ $metar[$apt]->temp }}&deg;C / {{ $metar[$apt]->dewpoint }}&deg;C</p>
                 @if($metar[$apt]->wind_vel == 0)
                     <p><b>Wind:</b> CALM</p>
-                @elseif($metar[$apt]->wind_vel < 3)
+                @elseif($metar[$apt]->wind_vel < 3 || $metar[$apt]->wind == 0)
                     <p><b>Wind:</b> VARIABLE @ {{ $metar[$apt]->wind_vel }} knots</p>
                 @else
                     <p><b>Wind:</b> {{ $metar[$apt]->wind }} degrees @ {{ $metar[$apt]->wind_vel }} knots</p>
