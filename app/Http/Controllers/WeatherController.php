@@ -16,15 +16,15 @@ class WeatherController extends Controller
             $metar = null;
             $taf = null;
         }
-        
+
         return view('site.weather')->with('metar', $metar)->with('taf', $taf)->with('apt', $apt);
     }
 
     public function searchAirport(Request $request) {
         if($request->apt != null) {
-            $apt = $request->apt;
+            $apt = strtoupper($request->apt);
             if(strlen($apt) == 3) {
-                $apt = 'K'.strtoupper($apt);
+                $apt = 'K'.$apt;
             }
             return redirect('/weather?apt='.$apt);
         } else {
