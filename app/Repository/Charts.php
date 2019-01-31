@@ -44,7 +44,7 @@ class Charts
     public function getChartChanges($apt, $chart_name) {
         $key = self::CACHE_KEY.'.CHANGE.'.$apt;
 
-        $value = Cache::remember($key, 1440, function() use ($apt) {
+        $value = Cache::remember($key, 1440, function() use ($apt, $chart_name) {
             $client = new Client;
             $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/charts/changes?apt='.$apt.'&chart_name='.$chart_name, [
                 'auth' => ['aviationapi', 'aviationapi']
