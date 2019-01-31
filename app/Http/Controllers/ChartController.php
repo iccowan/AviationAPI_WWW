@@ -56,7 +56,7 @@ class ChartController extends Controller
     public function ChartChangeindex(Request $request) {
         $apt = $request->apt;
         $c_name = $request->chart;
-        if($apt != null) {
+        if($apt != null || $c_name != null) {
             $charts = Charts::getChartChanges($apt, $c_name);
         } else {
             $charts = null;
