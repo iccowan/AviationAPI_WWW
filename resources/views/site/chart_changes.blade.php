@@ -22,10 +22,16 @@
                 </div>
             </div>
         </form>
-        @if($apt != null)
+        @if($apt != null || $c_name != null)
             @if(count($charts) > 0)
                 <hr>
-                <h3>Chart Change Comparisons for {{ $apt }}</h3>
+                @if($apt != null && $c_name == null)
+                    <h3>Chart Change Comparisons for {{ $apt }}</h3>
+                @elseif($apt == null && $c_name != null)
+                    <h3>Chart Change Comparisons for chart names like {{ $c_name }}</h3>
+                @elseif($apt != null && $c_name != null)
+                    <h3>Chart Change Comparisons for {{ $apt }} with chart names like {{ $c_name }}</h3>
+                @endif
                 <br>
                 <h5>General</h5>
                 <table class="table table-striped">

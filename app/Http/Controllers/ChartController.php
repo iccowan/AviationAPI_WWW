@@ -62,7 +62,7 @@ class ChartController extends Controller
             $charts = null;
         }
 
-        return view('site.chart_changes')->with('apt', $apt)->with('charts', $charts);
+        return view('site.chart_changes')->with('apt', $apt)->with('c_name', $c_name)->with('charts', $charts);
     }
 
     public function searchChartChange(Request $request) {
