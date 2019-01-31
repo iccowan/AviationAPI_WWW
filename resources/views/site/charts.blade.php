@@ -8,6 +8,7 @@
     <div class="container">
         <br>
         <h1>Search for Charts</h1>
+        <br>
         <form action="/charts/search" method="post">
             @csrf
             <div class="row">

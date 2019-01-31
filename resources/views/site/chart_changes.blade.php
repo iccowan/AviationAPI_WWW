@@ -8,6 +8,7 @@
     <div class="container">
         <br>
         <h1>Search for Chart Change Comparisons</h1>
+        <br>
         <form action="/charts/changes/search" method="post">
             @csrf
             <div class="row">

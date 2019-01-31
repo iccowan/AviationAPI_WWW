@@ -8,6 +8,7 @@
     <div class="container">
         <br>
         <h1>Search for AFD</h1>
+        <br>
         <form action="/charts/afd/search" method="post">
             @csrf
             <div class="row">

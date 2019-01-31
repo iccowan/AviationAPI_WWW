@@ -22,10 +22,10 @@
                     <a class="nav-link" href="/preferred-routes">Preferred Routes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/preferred-routes">Airport Information</a>
+                    <a class="nav-link" href="/airport-info">Airport Information</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/preferred-routes">Airport Weather</a>
+                    <a class="nav-link" href="/weather">Airport Weather</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pilots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VATSIM Data</a>
