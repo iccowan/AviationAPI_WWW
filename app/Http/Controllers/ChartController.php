@@ -66,15 +66,17 @@ class ChartController extends Controller
     }
 
     public function searchChartChange(Request $request) {
-        if($request->apt != null) {
+        if($request->apt != null && $request->c_name) {
             $apt = $request->apt;
-            if(strlen($apt) == 3) {
-                $apt = 'K'.strtoupper($apt);
+            if($apt != null) {
+                if(strlen($apt) == 3) {
+                    $apt = 'K'.strtoupper($apt);
+                }
             }
             $c_name = $request->c_name;
             return redirect('/charts/changes?apt='.$apt.'&chart='.$c_name);
         } else {
-            return redirect()->back()->with('error', 'You must search for an airport.');
+            return redirect()->back()->with('error', 'You must search for an airport or a chart name.');
         }
     }
 }
