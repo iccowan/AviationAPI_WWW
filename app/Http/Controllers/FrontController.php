@@ -11,4 +11,8 @@ class FrontController extends Controller
         $chart_url = Cache::get('CHART.OFTHEDAY')->pdf_url;
         return view('site.home')->with('chart_url', $chart_url);
     }
+
+    public function about() {
+        return view('site.about');
+    }
 }

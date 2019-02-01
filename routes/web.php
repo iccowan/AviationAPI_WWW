@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'FrontController@home');
+Route::get('/about', 'FrontController@about');
 
 //Charts
 Route::get('/charts', 'ChartController@index');
