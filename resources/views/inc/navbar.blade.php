@@ -19,9 +19,6 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/preferred-routes">Preferred Routes</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/airport-info">Airport Information</a>
                 </li>
                 <li class="nav-item">
@@ -30,8 +27,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pilots" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VATSIM Data</a>
                     <div class="dropdown-menu" aria-labelledby="pilots">
-                        <a class="dropdown-item" href="/charts">Search Pilots</a>
-                        <a class="dropdown-item" href="/charts/afd">Search Controllers</a>
+                        <a class="dropdown-item" href="/vatsim/pilots">Search Pilots</a>
+                        <a class="dropdown-item" href="/vatsim/controllers">Search Controllers</a>
                     </div>
                 </li>
                 <li class="nav-item">
