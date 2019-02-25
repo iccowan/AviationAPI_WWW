@@ -24,7 +24,7 @@ class ChartController extends Controller
             if(strlen($apt) == 3) {
                 $apt = 'K'.strtoupper($apt);
             }
-            return redirect('/charts?apt='.$apt);
+            return redirect('/charts?apt='.strtoupper($apt));
         } else {
             return redirect()->back()->with('error', 'You must search for an airport.');
         }
@@ -47,7 +47,7 @@ class ChartController extends Controller
             if(strlen($apt) == 3) {
                 $apt = 'K'.strtoupper($apt);
             }
-            return redirect('/charts/afd?apt='.$apt);
+            return redirect('/charts/afd?apt='.strtoupper($apt));
         } else {
             return redirect()->back()->with('error', 'You must search for an airport.');
         }
@@ -74,7 +74,7 @@ class ChartController extends Controller
                 }
             }
             $c_name = $request->c_name;
-            return redirect('/charts/changes?apt='.$apt.'&chart='.$c_name);
+            return redirect('/charts/changes?apt='.strtoupper($apt).'&chart='.$c_name);
         } else {
             return redirect()->back()->with('error', 'You must search for an airport or a chart name.');
         }
