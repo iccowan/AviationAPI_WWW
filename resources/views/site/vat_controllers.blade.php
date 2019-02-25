@@ -13,7 +13,7 @@
             @csrf
             <div class="row">
                 <div class="col-sm-4">
-                    <input type="text" name="fac" placeholder="Airport ID (ATL, KATL)" class="form-control">
+                    <input type="text" name="fac" placeholder="Facility ID (ATL, DC, DCA)" class="form-control">
                 </div>
                 <div class="col-sm-1">
                     <button class="btn btn-success" type="submit">Search</button>
