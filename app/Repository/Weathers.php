@@ -14,9 +14,7 @@ class Weathers
 
         $value = Cache::remember($key, 5, function() use ($apt) {
             $client = new Client(['exceptions' => false]);
-            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/weather/metar?apt='.$apt, [
-                'auth' => ['aviationapi', 'aviationapi']
-            ]);
+            $res = $client->request('GET', 'https://api.aviationapi.com/v1/weather/metar?apt='.$apt);
             $status = $res->getStatusCode();
             if($status == 200) {
                 $result = json_decode($res->getBody());
@@ -35,9 +33,7 @@ class Weathers
 
         $value = Cache::remember($key, 120, function() use ($apt) {
             $client = new Client(['exceptions' => false]);
-            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/weather/taf?apt='.$apt, [
-                'auth' => ['aviationapi', 'aviationapi']
-            ]);
+            $res = $client->request('GET', 'https://api.aviationapi.com/v1/weather/taf?apt='.$apt);
             $status = $res->getStatusCode();
             if($status == 200) {
                 $result = json_decode($res->getBody());
