@@ -14,9 +14,7 @@ class Vatsim
 
         $value = Cache::remember($key, 60, function() use ($apt) {
             $client = new Client;
-            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/vatsim/pilots?apt='.$apt, [
-                'auth' => ['aviationapi', 'aviationapi']
-            ]);
+            $res = $client->request('GET', 'https://api.aviationapi.com/v1/vatsim/pilots?apt='.$apt);
             $result = json_decode($res->getBody());
 
             return $result;
@@ -30,9 +28,7 @@ class Vatsim
 
         $value = Cache::remember($key, 60, function() use ($fac) {
             $client = new Client;
-            $res = $client->request('GET', 'https://api-dev.aviationapi.com/v1/vatsim/controllers?fac='.$fac.'_', [
-                'auth' => ['aviationapi', 'aviationapi']
-            ]);
+            $res = $client->request('GET', 'https://api.aviationapi.com/v1/vatsim/controllers?fac='.$fac.'_');
             $result = json_decode($res->getBody());
 
             return $result;
