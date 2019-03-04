@@ -13,7 +13,7 @@
             <hr>
             <h3>Today's Chart of the Day!</h3>
             <br>
-            <embed src="{{ $chart_url }}" width="600px" height="910px" />
+            <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ $chart_url }}" width="100%" height="755px">
             <hr>
             <h3>Enjoy AviationAPI?</h3>
             <h4>Consider donating!</h4>
